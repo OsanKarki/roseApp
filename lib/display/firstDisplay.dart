@@ -7,6 +7,8 @@ import 'package:foodorder/used/categoriesPart.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:foodorder/widget/appbarwidget.dart';
 
+import 'package:foodorder/widget/itemPage.dart';
+
 
 class FirstDisplay extends StatefulWidget {
   static const route = 'FirstDisplay';
@@ -34,14 +36,14 @@ class _FirstDisplayState extends State<FirstDisplay> {
 
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 10),
+        padding: const EdgeInsets.symmetric( horizontal: 10),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.symmetric(vertical: 40),
                 child: AppbarWidget(),
               ),
               const SizedBox(
@@ -146,39 +148,46 @@ class _FirstDisplayState extends State<FirstDisplay> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                    InkWell(
+                      onTap: (){
+                        Navigator.pushNamed(context, ItemPage.route);
+
+
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+
+                        ),
+                        height: 210,
+                        width: 150,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [Center(child: Image.network('https://freesvg.org/img/Burger2.png',height: 120,)),
+                              const Text('Burger',style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),),
+                              const SizedBox(
+                                height: 3,
+                              ),
+                              const Text('taste burger',style: TextStyle(fontSize: 12,),),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: const [
+                                  Text("\$10",style: TextStyle(fontSize:20,color: Colors.red,fontWeight: FontWeight.w700),),
+                                  Icon(Icons.favorite_border,color: Colors.red),
+                                ],
+                              )
+
+                            ],
+                          ),
+                        )
 
                       ),
-                      height: 210,
-                      width: 150,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [Center(child: Image.network('https://freesvg.org/img/Burger2.png',height: 120,)),
-                            const Text('Burger',style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),),
-                            const SizedBox(
-                              height: 3,
-                            ),
-                            const Text('taste burger',style: TextStyle(fontSize: 12,),),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
-                                Text("\$10",style: TextStyle(fontSize:20,color: Colors.red,fontWeight: FontWeight.w700),),
-                                Icon(Icons.favorite_border,color: Colors.red),
-                              ],
-                            )
-
-                          ],
-                        ),
-                      )
-
                     ),
                     Container(
                         decoration: BoxDecoration(
@@ -479,6 +488,7 @@ class _FirstDisplayState extends State<FirstDisplay> {
           ),
         ),
       ),
+
     );
   }
 }

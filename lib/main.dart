@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodorder/display/cartPage.dart';
 import 'package:foodorder/display/firstDisplay.dart';
+import 'package:foodorder/widget/itemPage.dart';
 import '';
 void main(){
   runApp(const MyFoodApp());
@@ -21,6 +22,7 @@ class MyFoodApp extends StatelessWidget {
       routes: {
         FirstDisplay.route:(context) => const FirstDisplay(),
         CartPage.route:(context) => const CartPage(),
+        ItemPage.route:(context) => const ItemPage(),
 
       },
 

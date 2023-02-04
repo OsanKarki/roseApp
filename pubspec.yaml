@@ -49,8 +49,10 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   font_awesome_flutter: ^10.3.0
-  dependencies:
+
   flutter_rating_bar: ^4.0.1
+
+  clippy_flutter: ^2.0.0-nullsafety.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

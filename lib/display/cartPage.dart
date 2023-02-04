@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:foodorder/widget/bottomNavbar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CartPage extends StatelessWidget {
   static const route = 'CartPage';
@@ -85,20 +87,12 @@ class CartPage extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: const [
-                          Icon(
-                            Icons.minimize,
-                            color: Colors.white,
-                            size: 30,
-                          ),
+                         FaIcon(FontAwesomeIcons.add,color: Colors.white,size: 18,),
                           Text(
                             '3',
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
-                          Icon(
-                            Icons.minimize,
-                            color: Colors.white,
-                            size: 30,
-                          ),
+                          FaIcon(FontAwesomeIcons.minus,color: Colors.white,size: 18),
 
                           // Icon(Icons.minimize,color: Colors.white,size: 30,),
 
@@ -175,20 +169,12 @@ class CartPage extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: const [
-                          Icon(
-                            Icons.minimize,
-                            color: Colors.white,
-                            size: 30,
-                          ),
+                          FaIcon(FontAwesomeIcons.add,color: Colors.white,size: 18,),
                           Text(
                             '3',
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
-                          Icon(
-                            Icons.minimize,
-                            color: Colors.white,
-                            size: 30,
-                          ),
+                          FaIcon(FontAwesomeIcons.minus,color: Colors.white,size: 18),
 
                           // Icon(Icons.minimize,color: Colors.white,size: 30,),
 
@@ -265,20 +251,12 @@ class CartPage extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: const [
-                          Icon(
-                            Icons.minimize,
-                            color: Colors.white,
-                            size: 30,
-                          ),
+                          FaIcon(FontAwesomeIcons.add,color: Colors.white,size: 18,),
                           Text(
                             '3',
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
-                          Icon(
-                            Icons.minimize,
-                            color: Colors.white,
-                            size: 30,
-                          ),
+                          FaIcon(FontAwesomeIcons.minus,color: Colors.white,size: 18),
 
                           // Icon(Icons.minimize,color: Colors.white,size: 30,),
 
@@ -385,22 +363,12 @@ class CartPage extends StatelessWidget {
                       ),
                     )),
               ),
-              Padding(
-                padding: const EdgeInsets.all(25.0),
-                child: Center(
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.red),
 
-                      ),
-                      child: Text('Order Now')),
-                ),
-              )
             ],
           ),
         ),
       ),
+      bottomNavigationBar: ItemBottonNavBar(),
       // bottomNavigationBar: BottomNavigationBar(
       //   backgroundColor: Colors.red,
       //  items: const [BottomNavigationBarItem(
@@ -408,5 +376,6 @@ class CartPage extends StatelessWidget {
       //
       //  )],)
     );
+
   }
 }
